@@ -26,14 +26,14 @@ def get_llm_response(user_input: str, expert_type: str) -> str:
     return response.content
 
 # StreamlitのUI構築
-st.title("専門家AIチャットアシスタント")
+st.title("専門家AIチャット")
 st.markdown("""
-このアプリは、LLMに「医師」「弁護士」「エンジニア」などの専門家として振る舞わせ、あなたの質問に対して最適な回答を提供します。  
-下記のフォームに質問を入力し、専門家の種類を選んで送信してください。
+このアプリは、AI「医師」「弁護士」「エンジニア」などの各専門家が、あなたの質問に対して最適な回答を提供します。  
+下記のフォームに質問を入力し、専門家を選んで送信してください。
 """)
 
 # 専門家の種類選択（ラジオボタン）
-expert_type = st.radio("専門家の種類を選んでください", list(expert_prompts.keys()))
+expert_type = st.radio("専門家を選んでください", list(expert_prompts.keys()))
 
 # 入力フォーム
 user_input = st.text_area("質問内容を入力してください", height=100)
